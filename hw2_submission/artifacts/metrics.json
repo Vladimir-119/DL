@@ -1,0 +1,213 @@
+{
+  "track": "nlp",
+  "model": "google-bert/bert-base-cased",
+  "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+  "dataset": "DFKI-SLT/few-nerd/supervised",
+  "classes": [
+    "art",
+    "building",
+    "event",
+    "location",
+    "organization",
+    "other",
+    "person",
+    "product"
+  ],
+  "n_train": 6000,
+  "n_val": 1000,
+  "n_test": 1000,
+  "params_total": 107732753,
+  "dataset_revision": "205f3e9c9f3577ea2561d43f2f62dc249ab92d5b",
+  "source_sizes": {
+    "train": 131767,
+    "validation": 18824,
+    "test": 37648
+  },
+  "adjacent_boundaries_preserved": {
+    "train": 14,
+    "validation": 1,
+    "test": 1
+  },
+  "seed": 0,
+  "epochs": 3,
+  "max_length": 128,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.20363494234903265,
+      "f1_macro": 0.1262966255237951,
+      "precision": 0.20319812792511702,
+      "recall": 0.20407363885624755
+    },
+    "random_head": {
+      "f1_micro": 0.007903951975987993,
+      "f1_macro": 0.00817323839066787,
+      "precision": 0.00453059585937948,
+      "recall": 0.030943987465726595
+    }
+  },
+  "validation": {
+    "f1_micro": 0.735763097949886,
+    "f1_macro": 0.6785289117772301,
+    "precision": 0.7138121546961326,
+    "recall": 0.7591069330199764,
+    "token_f1": 0.7872802686154454,
+    "per_type": {
+      "art": {
+        "precision": 0.6018518518518519,
+        "recall": 0.6132075471698113,
+        "f1-score": 0.6074766355140186,
+        "support": 106
+      },
+      "building": {
+        "precision": 0.5965909090909091,
+        "recall": 0.6907894736842105,
+        "f1-score": 0.6402439024390243,
+        "support": 152
+      },
+      "event": {
+        "precision": 0.5546218487394958,
+        "recall": 0.673469387755102,
+        "f1-score": 0.6082949308755761,
+        "support": 98
+      },
+      "location": {
+        "precision": 0.7720403022670025,
+        "recall": 0.8129973474801061,
+        "f1-score": 0.7919896640826873,
+        "support": 754
+      },
+      "organization": {
+        "precision": 0.6129666011787819,
+        "recall": 0.6596194503171248,
+        "f1-score": 0.6354378818737271,
+        "support": 473
+      },
+      "other": {
+        "precision": 0.6752136752136753,
+        "recall": 0.6245059288537549,
+        "f1-score": 0.6488706365503081,
+        "support": 253
+      },
+      "person": {
+        "precision": 0.8604269293924466,
+        "recall": 0.9192982456140351,
+        "f1-score": 0.8888888888888887,
+        "support": 570
+      },
+      "product": {
+        "precision": 0.572289156626506,
+        "recall": 0.6462585034013606,
+        "f1-score": 0.6070287539936102,
+        "support": 147
+      }
+    }
+  },
+  "final": {
+    "f1_micro": 0.7345844504021448,
+    "f1_macro": 0.6699694235059684,
+    "precision": 0.7046289493019838,
+    "recall": 0.7672,
+    "token_f1": 0.7890492782478845,
+    "per_type": {
+      "art": {
+        "precision": 0.6981132075471698,
+        "recall": 0.7551020408163265,
+        "f1-score": 0.7254901960784315,
+        "support": 98
+      },
+      "building": {
+        "precision": 0.5275590551181102,
+        "recall": 0.5726495726495726,
+        "f1-score": 0.5491803278688524,
+        "support": 117
+      },
+      "event": {
+        "precision": 0.4649122807017544,
+        "recall": 0.45689655172413796,
+        "f1-score": 0.46086956521739125,
+        "support": 116
+      },
+      "location": {
+        "precision": 0.7937743190661478,
+        "recall": 0.8488210818307905,
+        "f1-score": 0.8203753351206434,
+        "support": 721
+      },
+      "organization": {
+        "precision": 0.6528776978417267,
+        "recall": 0.7469135802469136,
+        "f1-score": 0.6967370441458735,
+        "support": 486
+      },
+      "other": {
+        "precision": 0.5238095238095238,
+        "recall": 0.616,
+        "f1-score": 0.5661764705882353,
+        "support": 250
+      },
+      "person": {
+        "precision": 0.8289241622574955,
+        "recall": 0.8768656716417911,
+        "f1-score": 0.8522212148685403,
+        "support": 536
+      },
+      "product": {
+        "precision": 0.6684491978609626,
+        "recall": 0.7102272727272727,
+        "f1-score": 0.6887052341597796,
+        "support": 176
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "full": {
+      "f1_micro": 0.735763097949886,
+      "f1_macro": 0.6785289117772301,
+      "precision": 0.7138121546961326,
+      "recall": 0.7591069330199764,
+      "train_time_sec": 166.27366788299997,
+      "trainable_params": 107732753
+    },
+    "variant": {
+      "f1_micro": 0.03002610966057441,
+      "f1_macro": 0.011571976505093952,
+      "precision": 0.09001956947162426,
+      "recall": 0.018018018018018018,
+      "train_time_sec": 43.321716710999965,
+      "trainable_params": 13073
+    }
+  },
+  "errors": {
+    "correct": 1938,
+    "boundary": 234,
+    "type": 287,
+    "missed": 94,
+    "spurious": 194
+  },
+  "truncation": {
+    "train": {
+      "truncated_sentences": 13,
+      "dropped_tail_words": 303,
+      "words_without_subwords": 0
+    },
+    "validation": {
+      "truncated_sentences": 2,
+      "dropped_tail_words": 89,
+      "words_without_subwords": 0
+    },
+    "test": {
+      "truncated_sentences": 1,
+      "dropped_tail_words": 2,
+      "words_without_subwords": 0
+    }
+  },
+  "bio_normalization": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "device": "Tesla T4",
+  "train_time_sec": 166.27366788299997,
+  "fast_mode": false
+}
