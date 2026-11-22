@@ -1,0 +1,153 @@
+{
+  "model": "google-bert/bert-base-cased",
+  "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+  "dataset": "DFKI-SLT/few-nerd",
+  "config": "supervised",
+  "device": "Tesla T4",
+  "fast_mode": false,
+  "seed": 0,
+  "results": {
+    "6.2": {
+      "model": "distilbert/distilbert-base-cased",
+      "revision": "6ea81172465e8b0ad3fddeed32b986cdcdcffcf0",
+      "license": "Apache-2.0",
+      "device": "Tesla T4",
+      "warmup": 5,
+      "repeats": 20,
+      "comparison": {
+        "BERT-base": {
+          "val_f1": 0.735763097949886,
+          "test_f1": 0.7345844504021448,
+          "train_time_sec": 166.27366788299997,
+          "forward_ms": 19.028484500000786,
+          "input_shape": [
+            16,
+            77
+          ],
+          "parameters": 107732753,
+          "weights_mib": 410.9678382873535
+        },
+        "DistilBERT": {
+          "val_f1": 0.7275816499905607,
+          "test_f1": 0.7161438408569242,
+          "train_time_sec": 71.88187390800005,
+          "forward_ms": 9.600588249998054,
+          "input_shape": [
+            16,
+            77
+          ],
+          "parameters": 65203985,
+          "weights_mib": 248.73346328735352
+        }
+      }
+    },
+    "6.3": {
+      "split": "validation",
+      "n_sentences": 1000,
+      "typo_probability": 0.15,
+      "conditions": {
+        "clean": {
+          "f1_micro": 0.735763097949886,
+          "mean_subwords": 1.2283672710751312,
+          "changed_word_fraction": 0.0,
+          "delta_f1": 0.0
+        },
+        "lowercase": {
+          "f1_micro": 0.33232295398181316,
+          "f1_macro": 0.3050296920758847,
+          "precision": 0.5604089219330854,
+          "recall": 0.23619271445358403,
+          "mean_subwords": 1.3348890999958696,
+          "changed_word_fraction": 0.24129527900541076,
+          "delta_f1": -0.4034401439680729
+        },
+        "uppercase": {
+          "f1_micro": 0.03462246777163905,
+          "f1_macro": 0.0356566584571371,
+          "precision": 0.29012345679012347,
+          "recall": 0.018409714061887975,
+          "mean_subwords": 2.686258312337367,
+          "changed_word_fraction": 0.8249555986948082,
+          "delta_f1": -0.701140630178247
+        },
+        "typos": {
+          "f1_micro": 0.7146355245809004,
+          "f1_macro": 0.6530408005709201,
+          "precision": 0.6883164005805515,
+          "recall": 0.7430473952213082,
+          "mean_subwords": 1.3440584858122342,
+          "changed_word_fraction": 0.05968361488579571,
+          "delta_f1": -0.02112757336898563
+        }
+      }
+    },
+    "6.4": {
+      "device": "cpu",
+      "engine": "x86",
+      "threads": 1,
+      "input_shape": [
+        16,
+        77
+      ],
+      "warmup": 5,
+      "repeats": 20,
+      "n_quantized_linear": 73,
+      "speedup": 1.162523675674975,
+      "fp32": {
+        "f1_micro": 0.735763097949886,
+        "f1_macro": 0.6785289117772301,
+        "precision": 0.7138121546961326,
+        "recall": 0.7591069330199764,
+        "forward_ms": 2016.5758565999963
+      },
+      "int8": {
+        "f1_micro": 0.723676775287248,
+        "f1_macro": 0.6606971784167313,
+        "precision": 0.6970246734397678,
+        "recall": 0.7524481002741872,
+        "forward_ms": 1734.6535806500015
+      },
+      "delta_f1": -0.012086322662637983
+    },
+    "6.5": {
+      "split": "validation",
+      "n_sentences": 1000,
+      "methods": {
+        "mean": {
+          "best": {
+            "threshold": 0.7715388536453247,
+            "precision": 0.8126684636118598,
+            "recall": 0.7085781433607521,
+            "f1": 0.7570621468926554,
+            "kept": 2226
+          },
+          "at_zero": {
+            "threshold": 0.0,
+            "precision": 0.7138121546961326,
+            "recall": 0.7591069330199764,
+            "f1": 0.7357630979498861,
+            "kept": 2715
+          },
+          "delta_f1": 0.02129904894276924
+        },
+        "min": {
+          "best": {
+            "threshold": 0.6308018565177917,
+            "precision": 0.7899231426131511,
+            "recall": 0.7246376811594203,
+            "f1": 0.7558733401430031,
+            "kept": 2342
+          },
+          "at_zero": {
+            "threshold": 0.0,
+            "precision": 0.7138121546961326,
+            "recall": 0.7591069330199764,
+            "f1": 0.7357630979498861,
+            "kept": 2715
+          },
+          "delta_f1": 0.020110242193116967
+        }
+      }
+    }
+  }
+}
